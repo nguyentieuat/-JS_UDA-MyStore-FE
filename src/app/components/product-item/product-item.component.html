@@ -1,0 +1,29 @@
+<div *ngIf="product" class="detail-container">
+    <div  fxLayout="row wrap" fxLayoutAlign="space-between center">
+        <div fxLayout="column" fxLayoutAlign="space-between center">
+            <img class="product-image" src='{{ product.url}}' alt="Image product"/>
+        </div>
+        <div class="detail-item">
+            <div class="product-item-detail product-title" ><b>{{ product.name }}</b></div>
+            <div class="product-item-detail" >$ {{ product.price }}</div>
+            <div class="product-item-detail" >{{ product.description }}</div>
+
+            <form (ngSubmit)="onSubmit(product, $event)">
+                <select style="width: 100px;"  class="product-item-detail form-select" aria-label="Default select example">
+                    <option 
+                    *ngFor="let product_option of productCount" 
+                    [value]="product_option"
+                    [selected]="product_option === '1'">
+                    {{ product_option }}
+                </option>
+                </select>
+                <input type="submit" value="Add to Cart" class="product-item-detail btn btn-primary">
+            </form>
+            <div class="product-item-detail">
+                <a routerLink="/">
+                    &larr;Return to product list
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

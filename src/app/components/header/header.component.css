@@ -1,0 +1,36 @@
+header {
+  background: #33b5e5;
+  padding: 1px;
+  display: flex;
+  justify-content: space-evenly;
+  color: #ffffff;
+  font-size: 25px;
+}
+
+.navbar {
+  margin: 7px;
+}
+.nav-item {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+a {
+  color: #ffffff;
+}
+
+a:link {
+  text-decoration: none;
+}
+
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a:active {
+  text-decoration: underline;
+}

@@ -1,0 +1,19 @@
+<div class="confirmation-container">
+    <div class="confirmation-items">
+        <div class="confirmation-header confirmation-item">
+            <h1>SUCCESS<img style="width: 50px;" src='http://localhost:4200/assets/congratulations.png' alt="Favicon success"/></h1>
+        </div>
+        <div class="confirmation-item">
+            Thank you, <b>{{ firstName }}</b>
+        </div>
+        <div class="confirmation-item">
+            Your <b>${{ totalPrice }}</b> order is confirmed!
+        </div>
+        <div class="confirmation-item">
+            Please allow 1-3 business day(s) for shipping
+        </div>
+        <div class="confirmation-item">
+            <button class="btn btn-primary"><a routerLink="/"> Return to product list </a></button>
+        </div>
+    </div>
+</div>
