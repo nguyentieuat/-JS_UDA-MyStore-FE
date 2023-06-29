@@ -1,13 +1,20 @@
 <form class="form-margin" #form="ngForm"  (ngSubmit)="onSubmitCheckout()">
     <h1> Checkout </h1>
     <label htmlFor="firstName">Full Name: </label><br />
-    <input type='text' style="margin-top: 10px;" name='firstName' required minlength="3" placeholder="minimum 3 character" [(ngModel)]="firstName">
+    <input type='text' style="margin-top: 10px;" name='firstName' required minlength="3" placeholder="minimum 3 character" [(ngModel)]="firstName" class="form-control"/>
+    <div *ngIf="form.controls['firstName']?.errors?.['required']" class="error-message">First Name is required</div>
+    <div *ngIf="form.controls['firstName']?.errors?.['minlength']" class="error-message">First Name minlength is 3</div>
     <br />
     <label htmlFor="address">Address: </label><br />
-    <input type='text' style="margin-top: 10px;" name='address' required  minlength="6" placeholder="minimum 6 character" [(ngModel)]="address">
+    <input type='text' style="margin-top: 10px;" name='address' required  minlength="6" placeholder="minimum 6 character" [(ngModel)]="address" class="form-control"/>
+    <div *ngIf="form.controls['address']?.errors?.['required']" class="error-message">Address is required</div>
+    <div *ngIf="form.controls['address']?.errors?.['minlength']" class="error-message">Address minlength is 6</div>
     <br />
     <label htmlFor="creditCard">Credit Card Number: </label><br />
-    <input type='text' style="margin-top: 10px;" name='creditCard' required  minlength="16" maxlength="16" placeholder="(16-digit number)" [(ngModel)]="creditCard">
+    <input type='text' pattern="([0-9])" style="margin-top: 10px;" name='creditCard' required  minlength="16" maxlength="16" placeholder="(16-digit number)" [(ngModel)]="creditCard" class="form-control"/>
+    <div *ngIf="form.controls['creditCard']?.errors?.['required']" class="error-message">CreditCard is required</div>
+    <div *ngIf="form.controls['creditCard']?.errors?.['minlength']" class="error-message">CreditCard length is 16</div>
+    <div *ngIf="form.controls['creditCard']?.errors?.['pattern']" class="error-message">CreditCard is number</div>
     <br />
     <input [disabled]="form.invalid" type='submit' value="Submit" class="btn btn-primary" style="
     margin-top: 10px;"/>

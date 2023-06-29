@@ -57,8 +57,7 @@ export class CartComponent implements OnInit {
     this.totalPrice = Number(this.totalPrice.toFixed(2));
   }
 
-  onChange(id: number, event: any): void {
-    const inputQuantity = event.target.value;
+  onChange(id: number, inputQuantity: number ): void {
     if(inputQuantity <= 0){
       this.removeCart(id);
     }
